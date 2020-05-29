@@ -66,7 +66,7 @@ function markerLocation(){
         var token = window.localStorage.getItem("token");
         console.log(token);
         if (token !== null && token !== undefined) {
-            window.location = window.location.origin + "/views/vendor.html";
+            window.location = window.location.origin + "/views/vendorView.html";
         }
     }
 
@@ -163,7 +163,7 @@ function markerLocation(){
                         window.localStorage.setItem("name", response["name"]);
                         window.localStorage.setItem("surname", response["surname"]);
 
-                        window.location = window.location.origin + "/views/vendor.html";
+                        window.location = window.location.origin + "/views/vendorView.html";
                     }
                     unblockElement(".container");
                 },
@@ -263,7 +263,7 @@ function markerLocation(){
                     console.log(response);
                     unblockElement(".container");
                     window.localStorage.setItem("restaurantId", response["id"]);
-                    window.location = window.location.origin + "/views/vendor.html";
+                    window.location = window.location.origin + "/views/vendorView.html";
                 },
                 error: function (error) {
                     toastr.error("Registration failed.");

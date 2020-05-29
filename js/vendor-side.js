@@ -5,7 +5,7 @@ $(document).ready(function() {
     var userId = window.localStorage.userId;
 
     if(token == null || token == undefined || token == ""){
-      window.location = window.location.origin + "/index.html";
+      window.location = window.location.origin + "/home.html";
     }
 
   $.ajax({
@@ -60,7 +60,7 @@ $(document).ready(function() {
             Yes: {
                 action: function () {
                     window.localStorage.clear();
-                    window.location = window.location.origin + "/index.html";
+                    window.location = window.location.origin + "/home.html";
                 },
                 text: 'Yes',
                 btnClass: 'btn-green',
