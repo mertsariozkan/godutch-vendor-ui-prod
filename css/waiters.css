@@ -1,0 +1,23 @@
+.waiter-box {
+  border: 3px solid gray;
+  border-radius: 15px;
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.waiter-box:hover {
+  border: 3px solid green;
+}
+
+.waiter-grid-gap {
+  margin-top: 20px;
+}
+
+#add-waiter-button {
+  border-radius: 30px;
+  margin-bottom: 20px;
+  width: 200px;
+}

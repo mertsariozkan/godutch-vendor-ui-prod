@@ -1,0 +1,19 @@
+.delete-item-btn {
+    border-radius: 30px;
+}
+
+.category-title {
+    display: inline-block;
+}
+
+.add-item-btn {
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+[contenteditable=true]:empty:before{
+    content: attr(placeholder);
+    pointer-events: none;
+    display: block; /* For Firefox */
+  }
