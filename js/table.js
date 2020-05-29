@@ -145,7 +145,11 @@ $(document).ready(function() {
                     
                         var tableRequest = {
                             restaurantId : restaurantId,
-                            restaurantTable : { name : name}
+                            restaurantTable : { 
+                                name : name,
+                                users: [],
+                                passCode: ""
+                            }
                         };
                         $.ajax({
                             type: "POST",
