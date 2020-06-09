@@ -9,10 +9,10 @@ $(document).ready(function() {
             waitersList = response;
             var counter = 0;
             waitersList.forEach(waiter => {
-                $("#waiters-container").append("<div class='col' id='"+ waiter.id +"'>"+
+                $("#waiters-container").append("<div class='col-3' id='"+ waiter.id +"'>"+
                 "<div class='waiter-box'>"+
                 "<div class='row-md-6'><button id='delete-waiter-button' name='"+waiter.id+"' type='button' class='btn btn-danger icofont-ui-remove ml-1 mb-2'></div>"+
-                "<div><img src='../assets/images/dinner-table.png'></div>"+
+                "<div><img src='../assets/images/user.png'></div>"+
                 "<div class='d-flex justify-content-center'>"+ waiter.name + " " + waiter.surname +"</div>"+
                 "</div>"+
                 "</div>");

@@ -8,8 +8,24 @@
     text-align: center;
 }
 
+.active-table-box {
+    border: 3px solid gray;
+    border-radius: 15px;
+    display: inline-block;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: lightgreen;
+}
+
 .table-box:hover {
     border: 3px solid green;
+    cursor: pointer;
+}
+.active-table-box:hover {
+    border: 3px solid green;
+    cursor: pointer;
 }
 
 .table-grid-gap {
@@ -20,4 +36,14 @@
     border-radius: 30px;
     margin-bottom: 20px;
     width: 160px;
-  }
+}
+
+#refresh-button {
+    border-radius: 30px;
+    margin-bottom: 20px;
+    width: 120px;
+}
+
+.active-check {
+    padding-left: 1.50rem;
+}
