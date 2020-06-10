@@ -51,7 +51,6 @@ $(document).ready(function() {
     }
     
     var includesValue = function(arr, propValue) {
-        debugger;
         for(var i = 0; i < arr.length; i++) {
             if (arr[i].name == propValue) {
                 return false;
@@ -89,13 +88,35 @@ $(document).ready(function() {
             success: function(response) {
                 // Populate data from response to ui using modal.
                 $("#table-modal-body")
+                var paymentLabel = response.paymentActive ? "(Payment active)" : ""
+                $("#exampleModalLabel").text(response.name + " " + paymentLabel);
+                var modalHtml = "";
+                var totalAmount = 0.0;
+                response.users.forEach( user => {
+                    var usernameColor = "black";
+                    var paidLabel = "";
+                    if(response.paymentActive && user.paid) {
+                        usernameColor = "green";
+                        paidLabel = "(Paid)";
+                    }
+                    else if(response.paymentActive && !user.paid) {
+                        usernameColor = "red";
+                        paidLabel = "(Not paid)";
+                    }
 
-
-
-
+                    modalHtml += "<h5 style='color:"+ usernameColor +";'>"+user.username+" "+ paidLabel +"</h5>";
+                    modalHtml += "<table class='table table-sm table-borderless category-table-section'> <thead><tr><th>Count</th><th>Name</th><th>Price</th></tr></thead><tbody>";
+                    user.orders.forEach(order => {
+                        totalAmount += order.count * order.item.price;
+                        modalHtml += "<tr><td>"+order.count+"</td><td>"+order.item.name+"</td><td>"+order.item.price+" TL</td></tr>";
+                    });
+                    modalHtml += "</tbody></table>";
+                });
+                modalHtml += "<h5>Total amount: " + totalAmount + " TL";
+                
+                $("#table-modal-body").html(modalHtml);
                 $('#tableModal').modal('show');
                 console.log(response);
-                debugger;
             },
             error: function(error) {
                 console.log(error);
